@@ -95,4 +95,17 @@ void save_Image(Image* I, const char* file_name){
     else if(!strcmp(format, "tga")){
         stbi_write_tga(file_name, I->width, I->height, 3, I->buffer);
     }
+    else if(!strcmp(format, "ppm")){
+        FILE* pfile = fopen(file_name, "wb");
+
+        if(!pfile){
+            fprintf(stderr, "Error initializing PPM Image File: %s\n", strerror(errno));
+            return;
+        }
+
+        fprintf(pfile, "P6\n%lld %lld\n255\n", I->width, I->height);
+        fwrite(I->buffer, sizeof(uint8_t), I->width * I->height * 3, pfile);
+
+        fclose(pfile);
+    }
 }

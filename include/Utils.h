@@ -14,6 +14,6 @@ double      clampF(double value, double min, double max);
 float       distance(uint64_t startX, uint64_t startY, uint64_t endX, uint64_t endY);
 uint64_t    distanceU(uint64_t startX, uint64_t startY, uint64_t endX, uint64_t endY);
 
-char* getFileFormat(const char* filepath);
+char*       getFileFormat(const char* filepath);
 
 #endif /* UTILS_H_ */
