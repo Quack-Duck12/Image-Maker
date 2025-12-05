@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 
+// Image Maker Program
 int main(){
     Image Img = init_Image(300, 300);
 
