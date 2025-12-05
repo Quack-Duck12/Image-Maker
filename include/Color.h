@@ -7,6 +7,8 @@ typedef struct {
     uint8_t r, g, b;
 } Color;
 
+Color get_Color(uint8_t r, uint8_t g, uint8_t b);
+
 static const Color BLACK   = {0, 0, 0};
 static const Color WHITE   = {255, 255, 255};
 

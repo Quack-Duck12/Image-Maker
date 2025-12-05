@@ -1,11 +1,17 @@
+#include "Color.h"
 #include "Images.h"
 
+#include <stdio.h>
+
 int main(){
-    Image i = init_Image(900, 600);
+    Image Img = init_Image(300, 300);
 
-    fill_Image(&i, CYAN);
+    Color c = get_Color(0xAA, 0x77, 0x11);
 
-    save_Image(&i, "LOL.png");
+    fill_Image(&Img, c);
+    draw_circle(&Img, 150, 150, 50, CYAN);
 
-    free_Image(&i);
+    save_Image(&Img, "name.png");
+
+    free_Image(&Img);
 }
