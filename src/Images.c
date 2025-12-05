@@ -76,9 +76,23 @@ void draw_circle(Image* I, uint64_t PosX, uint64_t PosY, uint64_t radius, Color 
     }
 }
 
-void save_Image(Image* I, const char* file_name) {
-    uint64_t stride = I->width * 3;
-    if (!stbi_write_png(file_name, I->width, I->height, 3, I->buffer, stride)){
-        fprintf(stderr, "Failed to save image: %s\n", file_name);
+void save_Image(Image* I, const char* file_name){
+    char* format = getFileFormat(file_name);
+    if (!format) {
+        printf("No output file extension found!\n");
+        return;
+    }
+
+    if(!strcmp(format, "jpg") || !strcmp(format, "jpeg")){
+        stbi_write_jpg(file_name, I->width, I->height, 3, I->buffer, 100);
+    }
+    else if(!strcmp(format, "png")){
+        stbi_write_png(file_name, I->width, I->height, 3, I->buffer, I->width * 3);
+    }
+    else if(!strcmp(format, "bmp")){
+        stbi_write_bmp(file_name, I->width, I->height, 3, I->buffer);
+    }
+    else if(!strcmp(format, "tga")){
+        stbi_write_tga(file_name, I->width, I->height, 3, I->buffer);
     }
 }

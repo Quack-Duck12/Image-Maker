@@ -32,3 +32,20 @@ uint64_t distanceU(uint64_t startX, uint64_t startY, uint64_t endX, uint64_t end
     uint64_t dy = (endY - startY);
     return ((dx*dx) + (dy*dy));
 }
+
+char* getFileFormat(const char* filepath){
+
+    const char* dot = strrchr(filepath, '.');
+    if (!dot || dot[1] == '\0') return strdup("");
+
+    dot++;
+
+    char* format = strdup(dot);
+    if (!format) return NULL;
+
+    for (char* p = format; *p; p++){
+        *p = tolower((unsigned char)*p);
+    }
+
+    return format;
+}

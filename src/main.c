@@ -12,7 +12,7 @@ int main(){
     fill_Image(&Img, c);
     draw_circle(&Img, 150, 150, 50, CYAN);
 
-    save_Image(&Img, "name.png");
+    save_Image(&Img, "name.jpg");
 
     free_Image(&Img);
 }
