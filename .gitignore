@@ -55,6 +55,4 @@ LOL.*
 *.png
 *.mp4
 
-/.vscode/
-.vscode/
-.vscode
+/.vscode
