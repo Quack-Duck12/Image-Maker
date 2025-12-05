@@ -1,3 +1,6 @@
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include "stb_image_write.h"
+
 #include "Images.h"
 
 Image init_Image(uint16_t Width, uint16_t Height){
@@ -22,7 +25,6 @@ void free_Image(Image* I){
 void fill_Image(Image* I, Color clr) {
     size_t rowSize = I->width * 3;
 
-    /* Create One Row Full of color */
     uint8_t* row = malloc(rowSize);
     for (size_t i = 0; i < rowSize; i += 3) {
         row[i]     = clr.r;
@@ -30,15 +32,12 @@ void fill_Image(Image* I, Color clr) {
         row[i + 2] = clr.b;
     }
 
-    /* Then copy the row in all rows using memcpy for speed */
-    for (uint32_t y = 0; y < I->height; y++) {
+    for (uint64_t y = 0; y < I->height; y++) {
         memcpy(I->buffer + y * rowSize, row, rowSize);
     }
 
     free(row);
 }
-
-
 
 void save_Image(Image* I, const char* file_name) {
     uint64_t stride = I->width * 3;

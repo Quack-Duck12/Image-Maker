@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "stb_image_write.h": "c"
     }
 }

@@ -1,5 +1,11 @@
-#include <stdio.h>
+#include "Images.h"
 
 int main(){
-    printf("Hello World!\n");
+    Image i = init_Image(900, 600);
+
+    fill_Image(&i, CYAN);
+
+    save_Image(&i, "LOL.png");
+
+    free_Image(&i);
 }
