@@ -52,7 +52,14 @@ Mkfile.old
 dkms.conf
 
 LOL.*
+
 *.png
+*.jpg
+*.jpeg
+*.bmp
+*.tga
+*.ppm
+
 *.mp4
 
 /.vscode
