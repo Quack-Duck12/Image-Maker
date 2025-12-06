@@ -5,12 +5,10 @@
 
 // Image Maker Program
 int main(){
-    Image Img = init_Image(300, 300);
+    Image Img = init_Image(10000, 2000);
 
-    Color c = color(0xAA, 0x77, 0x11);
-
-    fill_Image(&Img, c);
-    draw_circle(&Img, 150, 150, 50, COLOR_CYAN);
+    fill_Image(&Img, COLOR_ANTIQUEWHITE);
+    draw_circle(&Img, 600, 150, 350, COLOR_CYAN);
 
     save_Image(&Img, "name.png");
 

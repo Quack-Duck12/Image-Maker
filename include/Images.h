@@ -13,7 +13,7 @@ typedef struct{
     uint8_t* buffer;
 } Image;
 
-Image   init_Image(uint16_t Width, uint16_t Height);
+Image   init_Image(uint64_t Width, uint64_t Height);
 void    free_Image(Image* I);
 
 void    fill_Image(Image* I, Color clr);

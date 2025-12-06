@@ -3,7 +3,7 @@
 
 #include "Images.h"
 
-Image init_Image(uint16_t Width, uint16_t Height){
+Image init_Image(uint64_t Width, uint64_t Height){
     Image I;
     I.width = Width;
     I.height = Height;
