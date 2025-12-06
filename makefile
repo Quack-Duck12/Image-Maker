@@ -19,3 +19,4 @@ objs:
 clean:
 	-@rmdir /S /Q objs > NUL 2>&1
 	-@del /Q $(TARGET) > NUL 2>&1
+	-@del /Q *.ppm *.png *.jpg *.jpeg *.bmp > NUL 2>&1
